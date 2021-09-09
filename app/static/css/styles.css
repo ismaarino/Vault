@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("./Raleway-Regular.ttf");
+}
+
+.box {
+	padding-top: 40px;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	background-color: #e5e5f7;
+	opacity: 0.3;
+	background-image:  linear-gradient(30deg, #c1c1c1 12%, transparent 12.5%, transparent 87%, #c1c1c1 87.5%, #c1c1c1), linear-gradient(150deg, #c1c1c1 12%, transparent 12.5%, transparent 87%, #c1c1c1 87.5%, #c1c1c1), linear-gradient(30deg, #c1c1c1 12%, transparent 12.5%, transparent 87%, #c1c1c1 87.5%, #c1c1c1), linear-gradient(150deg, #c1c1c1 12%, transparent 12.5%, transparent 87%, #c1c1c1 87.5%, #c1c1c1), linear-gradient(60deg, #c1c1c177 25%, transparent 25.5%, transparent 75%, #c1c1c177 75%, #c1c1c177), linear-gradient(60deg, #c1c1c177 25%, transparent 25.5%, transparent 75%, #c1c1c177 75%, #c1c1c177);
+	background-size: 36px 63px;
+	background-position: 0 0, 0 0, 18px 32px, 18px 32px, 0 0, 18px 32px;
+	z-index: -1;
+}
+
+div{
+	margin-bottom: 60px;
+}
+
+h1 {
+    font-family: "Raleway";
+    font-size: 60;
+	background: #38db8f;
+	background: -webkit-linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	background: -moz-linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	background: linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-family: "Raleway";
+    font-size: 35;
+	background: #38db8f;
+	background: -webkit-linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	background: -moz-linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	background: linear-gradient(to right, #38db8f 0%, #B7CF55 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+p{
+	color: #38db8f;
+	font-size: 20;
+}
+
+.author{
+	display: inline-block;
+	font-size: 15;
+	margin-left: 20px;
+	color: #258558;
+}
+
+.centered {
+	margin-top: 10px;
+	margin-right: 80px;
+	margin-left: 80px;
+	text-align: center;
+}
+
+.white {
+	color:aliceblue;
+}
+
+.layer {
+	position: absolute;
+	left: 20%;
+	top: 23%;
+	right: 20%;
+	bottom: 20%;
+	padding: 30px;
+	border-radius: 9px 9px 9px 9px;
+	-moz-border-radius: 9px 9px 9px 9px;
+	-webkit-border-radius: 9px 9px 9px 9px;
+	border: 0px solid transparent;
+	background-color: rgb(39, 39, 39);
+	display: none;
+	text-align: center;
+	z-index: 100;
+}

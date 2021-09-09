@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" href="static/lib/astiloader/astiloader.css">
+<link rel="stylesheet" href="static/lib/astimodaler/astimodaler.css">
+<link rel="stylesheet" href="static/lib/astinotifier/astinotifier.css">
+<link href="static/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/styles.css" rel="stylesheet">
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+</head>
+<body>
+<div id="show-k-layer" class="box layer">
+	<p id="key-label" class="white"></p>
+	<button id="del-but" class="btn btn-danger" onclick="sure()">🗑</button>
+	<button class="btn btn-success" onclick="closeLayer()">✔</button>
+</div>
+<div class="box">
+	<div class="centered">
+		<div class="dropdown">
+			<input id="search" class="form-control me-2 dropdown-toggle" data-bs-toggle="dropdown" type="search" placeholder="google.com" aria-label="google.com">
+			<ul id="result-list" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2"><li><a class='dropdown-item disabled' href='#'>Search Something</a></li></ul>
+	    </div>
+	    <button id="show-button" type="button" class="btn btn-primary">New Entry</button>
+	</div>
+</div>
+<div id="add-group" style="margin-right: 10px;margin-left: 10px;display: none;">
+	<div class="input-group mb-3">
+	  <span class="input-group-text">www</span>
+	  <input id="add-site" type="text" class="form-control" placeholder="Site" aria-label="Site">
+	  <span class="input-group-text">@</span>
+	  <input id="add-user" type="text" class="form-control" placeholder="Username" aria-label="Username">
+	  <span class="input-group-text">🔑</span>
+	  <input id="add-pass" type="password" class="form-control" placeholder="Password" aria-label="Password">
+	  <input id="add-pass2" type="password" class="form-control" placeholder="Repeat it" aria-label="Repeat it">
+	  <button id="add-button" type="button" class="btn btn-success" onclick="vault.add()">Add</button>
+	</div>
+</div>
+
+<div class="background"></div>
+</body>
+<script src="static/lib/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="static/lib/bootstrap/bootstrap-dark.min.css" />
+<script src="static/lib/jquery/jquery-3.6.0.min.js"></script>
+<script src="static/js/vault.js"></script>
+<script src="static/lib/astiloader/astiloader.js"></script>
+<script src="static/lib/astimodaler/astimodaler.js"></script>
+<script src="static/lib/astinotifier/astinotifier.js"></script>
+<script type="text/javascript">
+	vault.init();
+</script>
+<script>
+	$("#show-button").click(function(){
+		$("#show-button").fadeOut("fast");
+		setTimeout(function(){$("#add-group").fadeIn();}, 400);
+	});
+
+	$("#add-button").click(function(){
+		//js add key
+		$("#add-group").fadeOut("fast");
+		setTimeout(function(){$("#show-button").fadeIn();}, 400);
+	});
+	var lv = "";
+	setInterval(function(){
+		var v = $("#search").val();
+		if(lv != v){
+			vault.search(v);
+			lv = v;
+		}
+	}, 700);
+
+	function closeLayer(){
+		$("#show-k-layer").fadeOut("fast");
+		setTimeout(function(){$("#key-label").html("");}, 400);
+	}
+
+	function sure(){
+		var sure = "Sure ?"
+		if($("#del-but").html() == sure){
+			closeLayer();
+			setTimeout(function(){$("#del-but").html("🗑");}, 350);
+			vault.delete();
+		} else {
+			$("#del-but").fadeOut("fast");
+			setTimeout(function(){$("#del-but").html(sure);}, 350);
+			setTimeout(function(){$("#del-but").fadeIn("fast")}, 380);
+			setTimeout(function(){$("#del-but").fadeOut("fast");}, 3500);
+			setTimeout(function(){$("#del-but").html("🗑");}, 4000);
+			setTimeout(function(){$("#del-but").fadeIn("fast")}, 4000);
+		}
+	}
+</script>
+<script>if (window.module) module = window.module;</script>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="static/lib/astiloader/astiloader.css">
+<link rel="stylesheet" href="static/lib/astimodaler/astimodaler.css">
+<link rel="stylesheet" href="static/lib/astinotifier/astinotifier.css">
+<link href="static/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="box">
+	<h1>Vault<p class="author">by ismaarino</p></h1>
+	<p>Enter your password</p>
+	<div class="input-group mb-3">
+	  <span class="input-group-text" id="basic-addon1">🔑</span>
+	  <input id="key" type="password" class="form-control" placeholder="Clau" aria-label="Clau" aria-describedby="basic-addon1">
+	  <button class="btn btn-primary" onclick="vault.sendKey()">✔</button>
+	</div>
+</div>
+<div class="background"></div>
+</body>
+<script src="static/lib/bootstrap/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="static/lib/bootstrap/bootstrap-dark.min.css" />
+<script src="static/js/vault.js"></script>
+<script src="static/lib/astiloader/astiloader.js"></script>
+<script src="static/lib/astimodaler/astimodaler.js"></script>
+<script src="static/lib/astinotifier/astinotifier.js"></script>
+<script type="text/javascript">
+	vault.init();
+</script>
+</html>
